@@ -6,6 +6,15 @@ import org.junit.Test;
 public class PointTest {
 
     @Test
+    public void when00And00Then0() {
+        Point a = new Point(0, 0);
+        Point b = new Point(0, 0);
+        double rsl = a.distance(b);
+        double expected = 0;
+        Assert.assertEquals(expected, rsl, 0.01);
+    }
+
+    @Test
     public void when00And02Then2() {
         Point a = new Point(0, 0);
         Point b = new Point(0, 2);
