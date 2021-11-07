@@ -30,4 +30,26 @@ public class ShopDrop {
             }
         }
     }
+
+    /**
+     * Метод delete обнуляет ячейку по индексу, которую надо удалить
+     * и сдвигает её на место последнего элемента в данном массиве.
+     *
+     * @param products - массив, который надо отредактировать
+     * @param index    - индекс ячейки, которую надо обнулить
+     * @return - возвращает отредактированный массив
+     */
+    public static Product[] delete(Product[] products, int index) {
+        for (int i = 0; i < products.length; i++) {
+            if (i == index) {
+                products[i] = null;
+            }
+        }
+        for (int i = index + 1; i < products.length; i++) {
+            Product tmp = products[i - 1];
+            products[i - 1] = products[i];
+            products[i] = tmp;
+        }
+        return products;
+    }
 }
