@@ -30,6 +30,12 @@ public class Library {
         Book[] shelf2 = Arrays.copyOf(shelf, shelf.length + 1);
         shelf2[4] = book5;
         Library.info(shelf2);
+        for (int i = 0; i < shelf2.length; i++) {
+            String name = shelf2[i].getName();
+            if (name.equals("Clean code")) {
+                System.out.println(name + " - " + shelf2[i].getPage());
+            }
+        }
     }
 
     public static void info(Book[] shelf) {
