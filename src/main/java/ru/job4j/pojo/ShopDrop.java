@@ -40,16 +40,10 @@ public class ShopDrop {
      * @return - возвращает отредактированный массив
      */
     public static Product[] delete(Product[] products, int index) {
-        for (int i = 0; i < products.length; i++) {
-            if (i == index) {
-                products[i] = null;
-            }
+        for (int i = index; i < products.length - 1; i++) {
+            products[i] = products[i + 1];
         }
-        for (int i = index + 1; i < products.length; i++) {
-            Product tmp = products[i - 1];
-            products[i - 1] = products[i];
-            products[i] = tmp;
-        }
+        products[products.length - 1] = null;
         return products;
     }
 }
