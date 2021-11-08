@@ -115,6 +115,7 @@ public class Tracker {
         boolean isId = index != -1;
         if (isId) {
             items[index] = item;
+            items[index].setId(id);
         }
         return isId;
     }
