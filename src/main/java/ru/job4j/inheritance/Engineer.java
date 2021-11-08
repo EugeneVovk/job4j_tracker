@@ -8,13 +8,6 @@ public class Engineer extends Profession {
         this.task = task;
     }
 
-    public Engineer(String task) {
-        this.task = task;
-    }
-
-    public Engineer() {
-    }
-
     public String getTask() {
         return task;
     }

@@ -9,11 +9,6 @@ public class Builder extends Engineer {
         this.typeHouse = typeHouse;
     }
 
-    public Builder(String task, String typeHouse) {
-        super(task);
-        this.typeHouse = typeHouse;
-    }
-
     public void buildHouse(String typeHouse) {
         System.out.println("I can build " + typeHouse
                 + " and I can do " + getTask());

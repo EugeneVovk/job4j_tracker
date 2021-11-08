@@ -9,11 +9,6 @@ public class Programmer extends Engineer {
         this.program = program;
     }
 
-    public Programmer(String task, String program) {
-        super(task);
-        this.program = program;
-    }
-
     public void writeCode(Engineer task, String program) {
         System.out.println("I can write the program " + program
                 + " and I can do " + task);

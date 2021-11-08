@@ -9,11 +9,6 @@ public class Surgeon extends Doctor {
         this.bodyPart = bodyPart;
     }
 
-    public Surgeon(String diagnosis, String bodyPart) {
-        super(diagnosis);
-        this.bodyPart = bodyPart;
-    }
-
     public void surgery(Doctor diagnosis, String bodyPart) {
         System.out.println("My name is " + getName()
                 + ". I'm a " + getEducation()
