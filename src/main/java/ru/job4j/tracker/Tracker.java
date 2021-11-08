@@ -45,15 +45,8 @@ public class Tracker {
      * @return - возвращает найденный Item. Если Item не найден - возвращает null.
      */
     public Item findById(int id) {
-        Item rsl = null;
-        for (int index = 0; index < size; index++) {
-            Item item = items[index];
-            if (item.getId() == id) {
-                rsl = item;
-                break;
-            }
-        }
-        return rsl;
+        int index = indexOf(id);
+        return index != -1 ? items[index] : null;
     }
 
     /**
@@ -91,5 +84,38 @@ public class Tracker {
             }
         }
         return Arrays.copyOf(copy, len);
+    }
+
+    /**
+     * Метод, который возвращает index по id.
+     *
+     * @param id - id
+     * @return - индекс
+     */
+    private int indexOf(int id) {
+        int rsl = -1;
+        for (int i = 0; i < size; i++) {
+            if (items[i].getId() == id) {
+                rsl = i;
+                break;
+            }
+        }
+        return rsl;
+    }
+
+    /**
+     * Метод удаляет заявку, которая уже есть в системе и добавляет новую в эту ячейку
+     *
+     * @param id   - индекс ячейки, где надо произвести замену
+     * @param item - заявка, на которую меняем
+     * @return - true, если замена произведена или false, если index по id не найден
+     */
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        boolean isId = index != -1;
+        if (isId) {
+            items[index] = item;
+        }
+        return isId;
     }
 }
