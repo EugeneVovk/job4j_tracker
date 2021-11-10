@@ -112,4 +112,19 @@ public class Tracker {
         }
         return isId;
     }
+
+    /**
+     * Метод удаления заявки
+     * @param id - id заявки
+     * @return
+     */
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        boolean isId = index != -1;
+        if (isId) {
+            items[index] = null;
+            System.arraycopy(items, index + 1, items, index, size);
+        }
+        return true;
+    }
 }
