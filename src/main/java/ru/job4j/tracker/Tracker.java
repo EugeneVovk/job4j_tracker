@@ -55,14 +55,7 @@ public class Tracker {
      * @return - возвращает копию массива items без null элементов (без пустых ячеек).
      */
     public Item[] findAll() {
-        Item[] copy = new Item[size];
-        int len = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null) {
-                copy[len++] = items[i];
-            }
-        }
-        return Arrays.copyOf(copy, len);
+        return Arrays.copyOf(items, size);
     }
 
     /**
@@ -78,8 +71,8 @@ public class Tracker {
     public Item[] findByName(String key) {
         Item[] copy = new Item[size];
         int len = 0;
-        for (int i = 0; i < items.length; i++) {
-            if (items[i] != null && items[i].getName().equals(key)) {
+        for (int i = 0; i < size; i++) {
+            if (items[i].getName().equals(key)) {
                 copy[len++] = items[i];
             }
         }
@@ -101,22 +94,5 @@ public class Tracker {
             }
         }
         return rsl;
-    }
-
-    /**
-     * Метод удаляет заявку, которая уже есть в системе и добавляет новую в эту ячейку
-     *
-     * @param id   - индекс ячейки, где надо произвести замену
-     * @param item - заявка, на которую меняем
-     * @return - true, если замена произведена или false, если index по id не найден
-     */
-    public boolean replace(int id, Item item) {
-        int index = indexOf(id);
-        boolean isId = index != -1;
-        if (isId) {
-            items[index] = item;
-            items[index].setId(id);
-        }
-        return isId;
     }
 }
