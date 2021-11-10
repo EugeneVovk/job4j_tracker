@@ -95,4 +95,21 @@ public class Tracker {
         }
         return rsl;
     }
+
+    /**
+     * Метод удаляет заявку, которая уже есть в системе и добавляет новую в эту ячейку
+     *
+     * @param id   - индекс ячейки, где надо произвести замену
+     * @param item - заявка, на которую меняем
+     * @return - true, если замена произведена или false, если index по id не найден
+     */
+    public boolean replace(int id, Item item) {
+        int index = indexOf(id);
+        boolean isId = index != -1;
+        if (isId) {
+            item.setId(id);
+            items[index] = item;
+        }
+        return isId;
+    }
 }
