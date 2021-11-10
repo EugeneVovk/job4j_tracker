@@ -11,6 +11,10 @@ import java.util.Arrays;
  * 5. Переставьте местами книги с индексом 0 и 3. Выведите содержимое массива на консоль.
  * 6. Добавьте цикл с выводом книг с именем "Clean code".
  * 7. Залейте код, оставьте ссылку на коммит, измените ответственного на Петра Арсентьева.
+ *
+ * Проверяйте название так
+ * if ("Clean code".equals(shelf2[i].getName())) {
+ * это позволит избежать NPE если название книги не будет задано
  */
 public class Library {
     public static void main(String[] args) {
@@ -32,7 +36,7 @@ public class Library {
         Library.info(shelf2);
         for (int i = 0; i < shelf2.length; i++) {
             String name = shelf2[i].getName();
-            if (name.equals("Clean code")) {
+            if ("Clean code".equals(shelf2[i].getName())) {
                 System.out.println(name + " - " + shelf2[i].getPage());
             }
         }
