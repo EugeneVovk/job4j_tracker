@@ -7,6 +7,11 @@ package ru.job4j.tracker;
  * Это позволит при внесении правок в код сфокусироваться только на одном методе.
  */
 public class StartUI {
+    private final Output out;
+
+    public StartUI(Output out) {
+        this.out = out;
+    }
 
     /**
      * Метод init() - инициализирует приложение
@@ -33,10 +38,11 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
+        Output output = new ConsoleOutput();
         Input input = new ConsoleInput();
         Tracker tracker = new Tracker();
         UserAction[] actions = {
-                new CreateAction(),
+                new CreateAction(output),
                 new ShowAllAction(),
                 new ReplaceAction(),
                 new DeleteAction(),
@@ -44,6 +50,6 @@ public class StartUI {
                 new FindItemByNameAction(),
                 new Exit()
         };
-        new StartUI().init(input, tracker, actions);
+        new StartUI(output).init(input, tracker, actions);
     }
 }
