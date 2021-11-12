@@ -116,15 +116,16 @@ public class Tracker {
     /**
      * Метод удаления заявки
      * @param id - id заявки
-     * @return
+     * @return - возвращает true, если заявление удалено или false, если index не найдет по id.
      */
     public boolean delete(int id) {
         int index = indexOf(id);
         boolean isId = index != -1;
         if (isId) {
-            items[index] = null;
-            System.arraycopy(items, index + 1, items, index, size);
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size - 1] = null;
+            size--;
         }
-        return true;
+        return isId;
     }
 }
