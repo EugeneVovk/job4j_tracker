@@ -115,6 +115,7 @@ public class Tracker {
 
     /**
      * Метод удаления заявки
+     *
      * @param id - id заявки
      * @return - возвращает true, если заявление удалено или false, если index не найдет по id.
      */
