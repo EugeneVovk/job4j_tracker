@@ -13,10 +13,14 @@ public class Bus implements Transport {
         System.out.println("The number of passengers in the bus is " + number);
     }
 
+    /**
+     * Метод 'заправить'
+     * @param fuel - количество топлива
+     * @return - возвращает цену
+     */
     @Override
     public int refuel(int fuel) {
         this.fuel += fuel;
-        fuel = 0;
-        return 0;
+        return fuel * 60;
     }
 }
