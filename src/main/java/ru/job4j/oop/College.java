@@ -6,8 +6,10 @@ package ru.job4j.oop;
  */
 public class College {
     public static void main(String[] args) {
-        Object freshman = new Freshman();
-        Freshman freshman2 = (Freshman) new Student();
-
+        Freshman fresh = new Freshman();
+        /* делаем приведение к типу родителя Student. */
+        Student st = fresh;
+        /* делаем приведение к типу родителя Object. */
+        Object obj = fresh;
     }
 }
