@@ -19,13 +19,12 @@ public class Matches {
             System.out.println(player + " введите число от 1 до 3 ");
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
-            boolean step = matches > 0 && matches <= 3;
-            while (!step) {
+            if (matches < 1 || matches > 3) {
                 System.err.println(player + " введите число от 1 до 3 ");
-                matches = Integer.parseInt(input.nextLine());
-                step = matches > 0 && matches <= 3;
+                turn = !turn;
+            } else {
+                count -= matches;
             }
-            count -= matches;
             System.out.println("Количество спичек на столе - " + count);
         }
         if (!turn) {
