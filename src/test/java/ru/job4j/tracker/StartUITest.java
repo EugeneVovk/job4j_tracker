@@ -111,9 +111,7 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
-        assertThat(out.toString(), is(
-                out.toString()
-        ));
+        assertThat(out.toString(), is(out.toString()));
     }
 
     @Test
@@ -130,9 +128,7 @@ public class StartUITest {
         };
         new StartUI(out).init(in, tracker, actions);
         String ln = System.lineSeparator();
-        assertThat(out.toString(), is(
-                out.toString()
-        ));
+        assertThat(out.toString(), is(out.toString()));
     }
 
     @Test
