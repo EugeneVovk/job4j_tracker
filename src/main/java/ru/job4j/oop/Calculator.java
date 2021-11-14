@@ -16,13 +16,35 @@ public class Calculator {
         return x * a;
     }
 
+    public static int minus(int a) {
+        return Math.abs(x - a);
+    }
+
+    public int divide(int a) {
+        return a == 0 ? 0 : x / a;
+    }
+
+    public int sumAllOperation(int a) {
+        return sum(a) + multiply(a) + minus(a) + divide(a);
+    }
+
     public static void main(String[] args) {
-        System.out.println(
-                Calculator.sum(10)
-        );
+        int a = 2;
         Calculator calc = new Calculator();
         System.out.println(
-                calc.multiply(5)
+                Calculator.sum(a)
+        );
+        System.out.println(
+                calc.multiply(a)
+        );
+        System.out.println(
+                minus(a)
+        );
+        System.out.println(
+                calc.divide(a)
+        );
+        System.out.println(
+                calc.sumAllOperation(a)
         );
     }
 }
