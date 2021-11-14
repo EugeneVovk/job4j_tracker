@@ -8,18 +8,12 @@ public class UserStore {
      * @throws UserNotFoundException
      */
     public static User findUser(User[] users, String login) throws UserNotFoundException {
-        boolean isExist = false;
-        int idx = 0;
-        for (idx = 0; idx < users.length; idx++) {
-            if (users[idx].getUsername().equals(login)) {
-                isExist = true;
-                break;
+        for (User user : users) {
+            if (user.getUsername().equals(login)) {
+                return user;
             }
         }
-        if (!isExist) {
-            throw new UserNotFoundException("User not found");
-        }
-        return users[idx];
+        throw new UserNotFoundException("User not found");
     }
 
     /**
@@ -28,11 +22,10 @@ public class UserStore {
      * @throws UserInvalidException
      */
     public static boolean validate(User user) throws UserInvalidException {
-        boolean isValid = user.isValid() && user.getUsername().length() > 3;
-        if (!isValid) {
+        if (!user.isValid() || user.getUsername().length() < 3) {
             throw new UserInvalidException("User isn't valid");
         }
-        return isValid;
+        return true;
     }
 
     public static void main(String[] args) {
