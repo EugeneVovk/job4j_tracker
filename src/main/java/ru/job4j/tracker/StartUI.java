@@ -22,7 +22,8 @@ public class StartUI {
     }
 
     /**
-     * Метод showMenu() - выводит на экран меню доступных пользовательских действий
+     * Метод showMenu()
+     * - выводит на экран меню доступных пользовательских действий
      */
     private void showMenu(UserAction[] actions) {
         out.println("Menu:");
