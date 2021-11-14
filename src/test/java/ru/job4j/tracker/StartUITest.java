@@ -42,7 +42,6 @@ public class StartUITest {
 
     @Test
     public void whenDeleteItem() {
-
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item item = tracker.add(new Item("Deleted item"));
