@@ -4,7 +4,6 @@ public class UserStore {
 
     /**
      * Поиск пользователя в списке
-     *
      * @throws UserNotFoundException
      */
     public static User findUser(User[] users, String login) throws UserNotFoundException {
@@ -18,7 +17,6 @@ public class UserStore {
 
     /**
      * Проверка пользователя на валидность
-     *
      * @throws UserInvalidException
      */
     public static boolean validate(User user) throws UserInvalidException {
