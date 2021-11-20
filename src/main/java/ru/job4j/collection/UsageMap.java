@@ -22,5 +22,10 @@ public class UsageMap {
             String value = entry.getValue();
             System.out.println(key + " = " + value);
         }
+        map.put("eugenevovk@gmail.com", "Vovk Evgeniy Nokolaevich");
+        for (String key : map.keySet()) {
+            String value = map.get(key);
+            System.out.println(key + " = " + value);
+        }
     }
 }
