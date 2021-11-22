@@ -2,6 +2,7 @@ package ru.job4j.collection;
 
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class JobSorter {
@@ -16,5 +17,17 @@ public class JobSorter {
         System.out.println(jobs);
         jobs.sort(new SortByNameJob());
         System.out.println(jobs);
+        /*
+        Комбинированный компаратор
+        В интерфейсе Comparator есть метод с реализацией по умолчанию - thenComparing.
+        Этот метод принимает другой компаратор.
+        Таким образом, можно соединить или скомбинировать любую сортировку.
+         */
+        jobs.sort(new JobDescByName().thenComparing(new JobDescByPriority()));
+        System.out.println(jobs);
+        Comparator<Job> comb = new JobDescByNameLn()
+                .thenComparing(new JobDescByName())
+                .thenComparing(new JobDescByPriority());
+        jobs.sort(comb);
     }
 }
