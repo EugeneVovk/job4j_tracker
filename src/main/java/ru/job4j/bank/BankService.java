@@ -23,7 +23,7 @@ public class BankService {
      * В методе есть проверка, что такого пользователя еще нет в системе.
      * Если он есть, то нового добавлять не надо.
      *
-     * @param user - пользователь, т.е. объект класса User.
+     * @param user пользователь, т.е. объект класса User.
      */
     public void addUser(User user) {
         users.putIfAbsent(user, new ArrayList<>());
@@ -35,8 +35,8 @@ public class BankService {
      * После этого мы получим список всех счетов пользователя и добавим новый счет к ним.
      * В этом методе есть проверка, что такого счета у пользователя еще нет.
      *
-     * @param passport - номер паспорта пользователя
-     * @param account  - счёт пользователя
+     * @param passport номер паспорта пользователя
+     * @param account  счёт пользователя
      */
     public void addAccount(String passport, Account account) {
         User user = findByPassport(passport);
@@ -50,8 +50,8 @@ public class BankService {
      * Метод ищет пользователя по номеру паспорта
      * Используем перебор всех элементов через цикл for-each и метод Map.keySet.
      *
-     * @param passport - номер паспорта пользователя
-     * @return - Метод возвращает пользователя или null,
+     * @param passport номер паспорта пользователя
+     * @return Метод возвращает пользователя или null,
      * если такого пользователя нет
      */
     public User findByPassport(String passport) {
@@ -72,9 +72,9 @@ public class BankService {
      * то прежде чем получать список аккаунтов, проверяем
      * что метод findByPassport вернул отличное от null значение.
      *
-     * @param passport  - номер паспорта пользователя
-     * @param requisite - реквизиты пользователя
-     * @return - метод возвращает нужный счёт или null, если в такого счёта нет
+     * @param passport  номер паспорта пользователя
+     * @param requisite реквизиты пользователя
+     * @return метод возвращает нужный счёт или null, если в такого счёта нет
      */
     public Account findByRequisite(String passport, String requisite) {
         User user = findByPassport(passport);
@@ -96,12 +96,12 @@ public class BankService {
      * Метод принимает на вход данные (паспорт и реквизиты) отправителя и получателя,
      * а также сумму перевода
      *
-     * @param scrPassport   - паспорт пользователя, кто делает перевод
-     * @param srcRequisite  - реквизиты пользователя, кто делает перевод
-     * @param destPassport  - паспорт получателя
-     * @param destRequisite - реквизиты получателя
-     * @param amount        - количество денег на счёте srcAccount
-     * @return - Если счёт не найден или не хватает денег на счёте srcAccount
+     * @param scrPassport   паспорт пользователя, кто делает перевод
+     * @param srcRequisite  реквизиты пользователя, кто делает перевод
+     * @param destPassport  паспорт получателя
+     * @param destRequisite реквизиты получателя
+     * @param amount        количество денег на счёте srcAccount
+     * @return Если счёт не найден или не хватает денег на счёте srcAccount
      * (с которого переводят), то метод должен вернуть false, иначе true
      */
     public boolean transferMoney(String scrPassport, String srcRequisite,
