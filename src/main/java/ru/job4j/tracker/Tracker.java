@@ -54,7 +54,7 @@ public class Tracker {
      * @return - возвращает копию массива items без null элементов (без пустых ячеек).
      */
     public List<Item> findAll() {
-        return items;
+        return List.copyOf(items);
     }
 
     /**
