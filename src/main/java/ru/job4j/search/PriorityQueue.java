@@ -23,18 +23,19 @@ public class PriorityQueue {
      * @param task задача, которая добавляется в очередь
      */
     public void put(Task task) {
-        int i = 0;
+        int idx = 0;
         for (Task current : tasks) {
             if (task.getPriority() < current.getPriority()) {
                 break;
             }
-            i++;
+            idx++;
         }
-        tasks.add(i, task);
+        tasks.add(idx, task);
     }
 
     /**
      * Метод позволяет получить первую задачу в очереди
+     *
      * @return возвращает задачу из головы очереди или null если очередь пуста
      */
     public Task take() {
