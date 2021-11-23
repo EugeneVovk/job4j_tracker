@@ -19,18 +19,17 @@ import java.util.HashSet;
  */
 public class UniqueText {
     public static boolean isEquals(String originText, String duplicateText) {
-        boolean rsl = true;
         /* Преобразовать строку в массив слов.
         Для этого используется метод String.split(" ").*/
         String[] origin = originText.split(" ");
         String[] text = duplicateText.split(" ");
         HashSet<String> check = new HashSet<>(
                 Arrays.asList(origin));
-        HashSet<String> inspecting = new HashSet<>(
-                Arrays.asList(text));
-        for (String el : inspecting) {
-            rsl = check.contains(el);
+        for (String el : text) {
+            if (!check.contains(el)) {
+                return false;
+            }
         }
-        return rsl;
+        return true;
     }
 }
