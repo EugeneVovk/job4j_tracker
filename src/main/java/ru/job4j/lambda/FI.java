@@ -16,5 +16,20 @@ public class FI {
         Comparator<String> cmpSize = (left, right) -> left.length() - right.length();
         Comparator<String> cmpText = (left, right) -> left.compareTo(right);
         Comparator<String> cmpDescSize = (left, right) -> right.length() - left.length();
+
+        String[] numbers = {
+                "1. Task",
+                "2. Task",
+                "11. Task"
+        };
+        Comparator<String> numStr = (left, right) -> {
+            int first = Integer.valueOf(left.substring(0, left.indexOf(".")));
+            int second = Integer.valueOf(right.substring(0, right.indexOf(".")));
+            return first - second;
+        };
+        Comparator<Attachment> comp = (left, right) -> {
+            System.out.println("compare - " + left.getSize() + " : " + right.getSize());
+            return left.getSize() - right.getSize();
+        };
     }
 }
