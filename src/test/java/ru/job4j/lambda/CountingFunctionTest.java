@@ -25,8 +25,8 @@ public class CountingFunctionTest {
 
     @Test
     public void whenLinearFunctionThenPokazatelnayaResults() {
-        List<Double> result = CountingFunction.diapason(5, 8, x -> Math.pow(x, x));
-        List<Double> expected = Arrays.asList(3125D, 46656D, 823543D);
+        List<Double> result = CountingFunction.diapason(5, 8, x -> Math.pow(3, x));
+        List<Double> expected = Arrays.asList(243D, 729D, 2187D);
         assertThat(result, is(expected));
     }
 }
