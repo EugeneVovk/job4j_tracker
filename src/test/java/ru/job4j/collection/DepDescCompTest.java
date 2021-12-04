@@ -6,6 +6,7 @@ import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
 
 public class DepDescCompTest {
+
     @Test
     public void compare() {
         int rsl = new DepDescComp().compare(
