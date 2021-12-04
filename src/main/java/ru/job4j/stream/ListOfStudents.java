@@ -9,7 +9,6 @@ public class ListOfStudents {
 
     public static Map<String, Student> studentList(List<Student> students) {
         return students.stream()
-                .sorted(Comparator.comparing(Student::getScore))
                 .collect(Collectors.toMap(
                         key -> key.getSurname(),
                         value -> value,
