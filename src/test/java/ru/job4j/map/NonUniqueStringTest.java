@@ -8,6 +8,7 @@ import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.*;
 
 public class NonUniqueStringTest {
+
     @Test
     public void checkData() {
         String[] data = {"a", "b", "a", "c", "b"};

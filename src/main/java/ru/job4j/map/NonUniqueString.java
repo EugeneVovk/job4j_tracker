@@ -14,6 +14,7 @@ import java.util.Map;
  * В ином случае - должно принимать значение false.
  */
 public class NonUniqueString {
+
     public static Map<String, Boolean> checkData(String[] strings) {
         Map<String, Boolean> map = new HashMap<>();
         for (String str : strings) {
