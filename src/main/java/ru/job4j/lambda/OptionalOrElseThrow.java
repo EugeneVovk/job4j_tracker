@@ -15,9 +15,9 @@ import java.util.Optional;
  * в перегруженную его версию мы можем отправить любое исключение
  * <p>
  * Например:
- * Optional.of(1).orElseThrow(); // исключения не будет, т.к. значение есть
- * Optional.empty().orElseThrow(); // будет исключение NoSuchElementException
- * Optional.empty().orElseThrow(НашеИсключение::new); // будет исключение НашеИсключение
+ * Optional.of(1).orElseThrow();  исключения не будет, т.к. значение есть
+ * Optional.empty().orElseThrow();  будет исключение NoSuchElementException
+ * Optional.empty().orElseThrow(НашеИсключение::new);  будет исключение НашеИсключение
  * <p>
  * Ваша задача написать метод поиска пользователя по логину.
  * Если ничего не найдено, то нужно вернуть исключение
