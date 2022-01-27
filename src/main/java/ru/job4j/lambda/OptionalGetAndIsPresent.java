@@ -7,15 +7,15 @@ import java.util.Optional;
  * можно использовать метод isPresent(), isEmpty().
  * <p>
  * Например,
- * Optional.of(1).isPresent(); // даст true
- * Optional.empty().isEmpty(); // даст true
+ * Optional.of(1).isPresent();  даст true
+ * Optional.empty().isEmpty();  даст true
  * <p>
  * Для получения значения, которое мы поместили с помощью метода of()
  * мы можем использовать метод get()
  * <p>
  * Например,
- * Optional.of(1).get() // Вернет 1
- * Optional.empty().get() // Вернет исключение!
+ * Optional.of(1).get()  Вернет 1
+ * Optional.empty().get()  Вернет исключение!
  * <p>
  * Запомните, перед вызовом метода get() всегда нужно использовать isPresent().
  * В этом суть Optional, чтобы программист не забывал делать проверки.

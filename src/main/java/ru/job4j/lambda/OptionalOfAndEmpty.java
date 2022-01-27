@@ -18,8 +18,8 @@ import java.util.*;
  * Второй возвращает пустой Optional, что значит значения в нем нет.
  * <p>
  * Например,
- * Optional<Integer> num1 = Optional.of(1);      // внутри храниться значение 1
- * Optional<Integer> num2 = Optional.empty(); // внутри ничего не храниться
+ * Optional<Integer> num1 = Optional.of(1);       внутри храниться значение 1
+ * Optional<Integer> num2 = Optional.empty();  внутри ничего не храниться
  * <p>
  * Ваша задача написать метод поиска строки среди списка строк.
  * Если значение найдено, то нужно вернуть Optional из этого значения,

@@ -8,8 +8,8 @@ import java.util.Optional;
  * если значение Optional не пустое.
  * <p>
  * Например,
- * Optional.of(1).ifPresent(System.out::println); // выведется 1
- * Optional.empty().ifPresent(System.out::println); // ничего не выведется, потому что значения нет
+ * Optional.of(1).ifPresent(System.out::println);  выведется 1
+ * Optional.empty().ifPresent(System.out::println);  ничего не выведется, потому что значения нет
  * <p>
  * Ваша задача:
  * 1. Написать метод max(). Он находит максимальный элемент массива.

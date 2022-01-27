@@ -15,9 +15,9 @@ import java.util.function.Consumer;
  * Т.е. метод должен что-то принимать и ничего не возвращать.
  * С ним можно например применять метод System.out.println()
  * <p>
- * Consumer<String> lambda = (value) -> System.out.println(value); // запись через лямбду
+ * Consumer<String> lambda = (value) -> System.out.println(value);  запись через лямбду
  * <p>
- * Consumer<String> mReference = System.out::println; // запись через ссылки на метод
+ * Consumer<String> mReference = System.out::println;  запись через ссылки на метод
  * <p>
  * Еще пример
  * <p>

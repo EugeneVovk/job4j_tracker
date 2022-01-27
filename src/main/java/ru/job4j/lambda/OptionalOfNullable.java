@@ -11,9 +11,9 @@ import java.util.Optional;
  * и Optional из переданного значения, если оно не null.
  * <p>
  * Например,
- * Optional.ofNullable(1).ifPresent(System.out::println); // выведет 1
+ * Optional.ofNullable(1).ifPresent(System.out::println);  выведет 1
  * Optional.ofNullable(null).ifPresent(System.out::println);
- * // ничего выведется, потому что мы получили пустой Optional
+ *  ничего выведется, потому что мы получили пустой Optional
  * <p>
  * Ваша задача, написать метод поиск строки среди списка.
  * В списке могут быть null элементы.
