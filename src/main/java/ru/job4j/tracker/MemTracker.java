@@ -1,8 +1,6 @@
 package ru.job4j.tracker;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -14,7 +12,7 @@ import java.util.List;
  * Поле private Item[] items = new Item[100] содержит возможное количество заявлений.
  * Оно у нас ограничено сотней позиций.
  */
-public class Tracker {
+public class MemTracker implements Store {
     private final List<Item> items = new ArrayList<>();
     private int ids = 1;
 
@@ -28,6 +26,7 @@ public class Tracker {
      * То есть каждый вызов метод add будет добавлять в поле ids единицу.
      * Так мы сможем обеспечить уникальность поле id в Item.
      * Аналогичный подход используется в базах данных.
+     *
      * @param item - уникальный ключ.
      * @return - добавил заявку
      */
@@ -41,6 +40,7 @@ public class Tracker {
      * Метод public Item findById(int id) проверяет в цикле все элементы массива items,
      * сравнивая id с аргументом int id
      * и возвращает найденный Item. Если Item не найден - возвращает null.
+     *
      * @param id - id
      * @return - возвращает найденный Item. Если Item не найден - возвращает null.
      */
@@ -51,6 +51,7 @@ public class Tracker {
 
     /**
      * Метод public Item[] findAll()
+     *
      * @return - возвращает копию массива items без null элементов (без пустых ячеек).
      */
     public List<Item> findAll() {
@@ -63,6 +64,7 @@ public class Tracker {
      * сравнивая name (используя метод getName класса Item) с аргументом метода String key.
      * Элементы, у которых совпадает name, копирует в результирующий массив и возвращает его.
      * Алгоритм этого метода аналогичен методу findAll.
+     *
      * @param key - аргументом метода String key
      * @return - возвращает массив
      */
@@ -78,6 +80,7 @@ public class Tracker {
 
     /**
      * Метод, который возвращает index по id.
+     *
      * @param id - id
      * @return - индекс
      */
@@ -94,6 +97,7 @@ public class Tracker {
 
     /**
      * Метод удаляет заявку, которая уже есть в системе и добавляет новую в эту ячейку
+     *
      * @param id   - индекс ячейки, где надо произвести замену
      * @param item - заявка, на которую меняем
      * @return - true, если замена произведена или false, если index по id не найден
@@ -110,6 +114,7 @@ public class Tracker {
 
     /**
      * Метод удаления заявки
+     *
      * @param id - id заявки
      * @return - возвращает true, если заявление удалено или false, если index не найдет по id.
      */
