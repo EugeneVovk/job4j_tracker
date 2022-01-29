@@ -10,7 +10,7 @@ public final class SingleTracker {
 
     private static SingleTracker instance = null;
 
-    private Tracker tracker = new Tracker();
+    private MemTracker tracker = new MemTracker();
 
     /**
      * Модификатор private.
