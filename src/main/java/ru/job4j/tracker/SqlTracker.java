@@ -34,6 +34,14 @@ public class SqlTracker implements Store, AutoCloseable {
 
     private Connection conn;
 
+    public SqlTracker(Connection conn) {
+        this.conn = conn;
+    }
+
+    public SqlTracker() {
+
+    }
+
     public void init() {
         try (InputStream in = SqlTracker.class
                 .getClassLoader()
@@ -115,7 +123,6 @@ public class SqlTracker implements Store, AutoCloseable {
                     list.add(findBy(rs));
                 }
             }
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
